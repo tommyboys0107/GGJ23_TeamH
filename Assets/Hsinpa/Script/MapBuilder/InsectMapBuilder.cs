@@ -55,8 +55,8 @@ namespace Hsinpa {
             option.energy_spawn_size_min = 0.1f;
 
             option.barricade_spawn_trial = 10;
-            option.barricade_spawn_size_max = 2.5f;
-            option.barricade_spawn_size_min = 1f;
+            option.barricade_spawn_size_max = 0.5f;
+            option.barricade_spawn_size_min = 0.1f;
 
             Debug.Log($"Width {insect_mask.width}, Height {insect_mask.height}");
 
