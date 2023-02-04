@@ -17,12 +17,17 @@ public class LineBullet : MonoBehaviour
 
     public GameObject LinePrefab;
     float rt;
+
+    Hsinpa.InsectMapBuilder insectMapBuilder;
+
     void Start()
     {
         Line = gameObject.GetComponent<LineRenderer>();
         v3s[0] = P.position;
         GM.AddLineEvent += AddNewLine;
         rt = Time.time + 1;
+
+        insectMapBuilder = GameObject.FindObjectOfType<Hsinpa.InsectMapBuilder>();
         //P = transform;
     }
 
@@ -35,6 +40,31 @@ public class LineBullet : MonoBehaviour
             Destroy(this);
             return;
         }
+
+        //Chekc constraint
+        Vector3 currentPosition = P.transform.position;
+
+        if (insectMapBuilder != null) {
+
+            //Debug.Log( "Width Right " + (insectMapBuilder.center.x + (insectMapBuilder.width * 0.5f)));
+            //Debug.Log("Width Left " + (insectMapBuilder.center.x - (insectMapBuilder.width * 0.5f)));
+            //Debug.Log("X " + currentPosition.x);
+
+            if (
+                currentPosition.x > insectMapBuilder.center.x + (insectMapBuilder.width * 0.5f) ||
+                currentPosition.x < insectMapBuilder.center.x - (insectMapBuilder.width * 0.5f) ||
+
+                currentPosition.y > insectMapBuilder.center.y + (insectMapBuilder.height * 0.5f) ||
+                currentPosition.y < insectMapBuilder.center.y - (insectMapBuilder.height * 0.5f)
+                ) {
+
+                Debug.Log("Destory");
+                return;
+            }
+                
+        }
+
+
         LineMove();
         LineUpdate();
     }
