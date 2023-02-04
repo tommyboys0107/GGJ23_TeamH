@@ -200,22 +200,6 @@
         "com.unity.searcher": "4.9.1"
       }
     },
-    "com.unity.searcher": {
-      "version": "4.9.1",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.shadergraph": {
-      "version": "12.1.10",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.render-pipelines.core": "12.1.10",
-        "com.unity.searcher": "4.9.1"
-      }
-    },
     "com.unity.sysroot": {
       "version": "2.0.5",
       "depth": 1,
