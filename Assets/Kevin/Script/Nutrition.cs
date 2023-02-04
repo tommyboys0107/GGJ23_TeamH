@@ -21,7 +21,7 @@ public class Nutrition : EnergyObject
     protected Vector3 currentScale;
 
     [SerializeField]
-    protected Collider2D thisCollider;
+    protected PolygonCollider2D thisCollider;
 
     protected bool isProviding;
 
@@ -66,7 +66,6 @@ public class Nutrition : EnergyObject
     {
         if (collision.GetComponent<Collider2D>().tag == "Player")
         {
-            Debug.Log("Enter");
 
             if (!isProviding)
             {

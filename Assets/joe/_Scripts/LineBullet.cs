@@ -58,7 +58,7 @@ public class LineBullet : MonoBehaviour
                 currentPosition.y < insectMapBuilder.center.y - (insectMapBuilder.height * 0.5f)
                 ) {
 
-                Debug.Log("Destory");
+                //Debug.Log("Destory");
                 return;
             }
                 

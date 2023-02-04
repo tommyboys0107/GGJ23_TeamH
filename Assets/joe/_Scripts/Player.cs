@@ -1,3 +1,4 @@
+using Hsinpa.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GM gm;
+
+    private void OnEnable()
+    {
+        SimpleEventSystem.CustomEventListener += AddNutrition;
+    }
+
+    private void OnDisable()
+    {
+        SimpleEventSystem.CustomEventListener -= AddNutrition;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,5 +31,14 @@ public class Player : MonoBehaviour
             collision.gameObject.SetActive(false);
         }
     }
-    
+
+    public void AddNutrition(int tag, object[] value)
+    {
+        if (tag == (int)SimpleEventSystem.Tag.AddNutrition)
+        {
+            gm.AddHp((float)value[0]);
+        }
+
+    }
+
 }

@@ -159,6 +159,11 @@ public class GM : MonoBehaviour
 
     }
 
+    public void AddHp(float value)
+    {
+        hp += value;
+    }
+
     protected void PlayerDead()
     {
         if(points.Count == 0)
