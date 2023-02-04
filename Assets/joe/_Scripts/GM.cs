@@ -33,6 +33,8 @@ public class GM : MonoBehaviour
     public bool BottonDownL;
     public delegate void AddLine();
     public static event AddLine AddLineEvent;
+
+    public float HPscale = 0.25f;
     // Start is called before the first frame update
     void Start()
     {
@@ -87,8 +89,8 @@ public class GM : MonoBehaviour
             if (BottonDownR == true)
             {
                 GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + -90));
-                g.GetComponent<LineBullet>().hp = hp / 2;
-                hp = hp / 2;
+                g.GetComponent<LineBullet>().hp = hp * HPscale;
+                hp = hp - hp * HPscale;
 
                 AddLineEvent?.Invoke();
                 BottonDownR = false;
@@ -97,8 +99,8 @@ public class GM : MonoBehaviour
             if (BottonDownL == true)
             {
                 GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + 90));
-                g.GetComponent<LineBullet>().hp = hp / 2;
-                hp = hp / 2;
+                g.GetComponent<LineBullet>().hp = hp * HPscale;
+                hp = hp - hp * HPscale;
 
                 AddLineEvent?.Invoke();
                 BottonDownL = false;

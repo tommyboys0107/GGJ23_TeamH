@@ -103,7 +103,8 @@ public class LineBullet : MonoBehaviour
         
         P.transform.Rotate(Vector3.forward * -r * Time.deltaTime);
         rt = Time.time + 1;
-        g.GetComponent<LineBullet>().hp = hp / 2;
-        hp = hp / 2;
+        g.GetComponent<LineBullet>().hp = hp * GM.MainGM.HPscale;
+        hp = hp - hp * GM.MainGM.HPscale;
+        
     }
 }
