@@ -240,7 +240,7 @@ MonoBehaviour:
   hp: 100
   P: {fileID: 5580022062763447179}
   RotaSpeed: 40
-  MoveSpeed: 0.5
+  MoveSpeed: 2
   v3s:
   - {x: 0, y: 0, z: 0}
   LineUptateTime: 0.5

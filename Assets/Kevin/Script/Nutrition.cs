@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using Hsinpa.Utility;
+using Hsinpa;
 
-public class Nutrition : MonoBehaviour
+public class Nutrition : EnergyObject
 {
     [SerializeField]
     protected float duration;

@@ -174,6 +174,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: energy_prefab
+      value: 
+      objectReference: {fileID: 3572641856278876326, guid: 81a57839424e1164a8487959c303841b, type: 3}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: barricade_prefab
+      value: 
+      objectReference: {fileID: 277563677, guid: e1ca863ec39deb54593518cb7b58296f, type: 3}
     - target: {fileID: 7890478507912238746, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_Name
       value: MapBuilder
@@ -360,6 +368,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -433,6 +442,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &770165458
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,12 +914,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fa21cfd9ccd674b8ae7091f15b9a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 200
   v3s:
   - {x: 15.41, y: -0.72, z: 0}
   P: {fileID: 1170537344}
   RotaSpeed: 80
-  MoveSpeed: 0.5
+  MoveSpeed: 2
   LineUptateTime: 0.5
   LinePrefab: {fileID: 5580022061476951447, guid: 777b6e4c3941d4ae097ddbae243d221c, type: 3}
   deadPrefab: {fileID: 4698538015646849956, guid: 093c612528997114f9fa67994d20da58, type: 3}

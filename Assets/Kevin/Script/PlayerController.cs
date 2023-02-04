@@ -64,10 +64,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void RemoveNutrition(float value)
-    {
-
-    }
 
     public void ReturnToLastCheckPoint(int tag, object[] objects)
     {

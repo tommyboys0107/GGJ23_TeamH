@@ -292,6 +292,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: energy_prefab
+      value: 
+      objectReference: {fileID: 3572641856278876326, guid: 81a57839424e1164a8487959c303841b, type: 3}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: barricade_prefab
+      value: 
+      objectReference: {fileID: 277563677, guid: e1ca863ec39deb54593518cb7b58296f, type: 3}
     - target: {fileID: 7890478507912238746, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_Name
       value: MapBuilder

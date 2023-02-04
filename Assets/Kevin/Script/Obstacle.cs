@@ -1,9 +1,10 @@
+using Hsinpa;
 using Hsinpa.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MapObject
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
