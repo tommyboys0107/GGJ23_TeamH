@@ -6,19 +6,22 @@ using UnityEngine;
 public class Nutrition : MonoBehaviour
 {
     [SerializeField]
-    private float duration, interval;
+    protected float duration;
+   
+    [SerializeField]
+    private float interval;
 
     [SerializeField]
     private float totalNutritionValue, nutritionOverTime, maxNutritionValue;
 
-    private float scaleMultiplier;
+    protected float scaleMultiplier;
 
-    private Vector3 currentScale;
+    protected Vector3 currentScale;
 
     [SerializeField]
-    private Collider2D thisCollider;
+    protected Collider2D thisCollider;
 
-    private bool isStarted;
+    protected bool isProviding;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +38,11 @@ public class Nutrition : MonoBehaviour
 
 
 
-    private IEnumerator ProvideNutritionRoutine(PlayerController playerController)
+    private IEnumerator ProvideNutritionRoutine(IPlayer playerController)
     {
         while (totalNutritionValue > 0)
         {
-            playerController.AddNutriiton(nutritionOverTime);
+            playerController.AddNutrition(nutritionOverTime);
 
             totalNutritionValue -= nutritionOverTime;
 
@@ -63,11 +66,11 @@ public class Nutrition : MonoBehaviour
         {
             Debug.Log("Enter");
 
-            if (!isStarted)
+            if (!isProviding)
             {
                 StartCoroutine(ProvideNutritionRoutine(collision.gameObject.GetComponent<PlayerController>()));
 
-                isStarted = true;
+                isProviding = true;
             }
         }
     }
