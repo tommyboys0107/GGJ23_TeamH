@@ -21,7 +21,28 @@ namespace Hsinpa {
         [SerializeField]
         private Vector3 offset_position;
 
+        [Header("Object Config")]
+        [SerializeField, Range(1, 200)]
+        private int energy_spawn_trial = 10;
+
+        [SerializeField, Range(0.01f, 5)]
+        private float energy_max_size = 1;
+
+        [SerializeField, Range(0.01f, 5)]
+        private float energy_min_size = 1;
+
+        [SerializeField, Range(1, 200)]
+        private int barricade_spawn_trial = 10;
+
+        [SerializeField, Range(0.01f, 5)]
+        private float barricade_max_size = 1;
+
+        [SerializeField, Range(0.01f, 5)]
+        private float barricade_min_size = 1;
+
         private System.Random m_random_engine;
+
+
 
 
         public int width => border_width;
@@ -50,13 +71,13 @@ namespace Hsinpa {
             m_random_engine = new System.Random();
 
             MapStruct.MapBuilerOption option = new MapStruct.MapBuilerOption();
-            option.energy_spawn_trial = 25;
-            option.energy_spawn_size_max = 0.4f;
-            option.energy_spawn_size_min = 0.1f;
+            option.energy_spawn_trial = energy_spawn_trial;
+            option.energy_spawn_size_max = energy_max_size;
+            option.energy_spawn_size_min = energy_min_size;
 
-            option.barricade_spawn_trial = 10;
-            option.barricade_spawn_size_max = 0.5f;
-            option.barricade_spawn_size_min = 0.1f;
+            option.barricade_spawn_trial = barricade_spawn_trial;
+            option.barricade_spawn_size_max = barricade_max_size;
+            option.barricade_spawn_size_min = barricade_min_size;
 
             Debug.Log($"Width {insect_mask.width}, Height {insect_mask.height}");
 

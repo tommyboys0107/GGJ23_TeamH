@@ -470,6 +470,12 @@ MonoBehaviour:
   barricade_prefab: {fileID: 75126202249100314, guid: 6bae1b8c63def4400b25ce8650204e2c, type: 3}
   border_width: 30
   offset_position: {x: -15, y: -4.5, z: 0}
+  energy_spawn_trial: 25
+  energy_max_size: 0.5
+  energy_min_size: 0.1
+  barricade_spawn_trial: 15
+  barricade_max_size: 0.5
+  barricade_min_size: 0.1
 --- !u!1 &7890478507915341019
 GameObject:
   m_ObjectHideFlags: 0
