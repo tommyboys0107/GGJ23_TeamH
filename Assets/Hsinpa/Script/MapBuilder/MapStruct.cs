@@ -8,10 +8,14 @@ namespace Hsinpa {
         public struct MapBuilerOption {
 
             public int energy_spawn_trial;
-            public int energy_spawn_size;
+            public float energy_spawn_size_min;
+            public float energy_spawn_size_max;
+
 
             public int barricade_spawn_trial;
-            public int barricade_spawn_size;
+            public float barricade_spawn_size_max;
+            public float barricade_spawn_size_min;
+
 
         }
     }

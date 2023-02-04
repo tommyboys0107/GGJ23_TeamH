@@ -31,10 +31,12 @@ namespace Hsinpa {
 
             MapStruct.MapBuilerOption option = new MapStruct.MapBuilerOption();
             option.energy_spawn_trial = 25;
-            option.energy_spawn_size = 5;
+            option.energy_spawn_size_max = 0.4f;
+            option.energy_spawn_size_min = 0.1f;
 
             option.barricade_spawn_trial = 10;
-            option.barricade_spawn_size = 3;
+            option.barricade_spawn_size_max = 2.5f;
+            option.barricade_spawn_size_min = 1f;
 
             Debug.Log($"Width {insect_mask.width}, Height {insect_mask.height}");
 
@@ -43,11 +45,12 @@ namespace Hsinpa {
             int width = border_width;
             int height = Mathf.RoundToInt(width * aspect_ratio);
 
-            generateMap(energy_prefab, option.energy_spawn_trial, option.energy_spawn_size, width, height, offset_position);
-            generateMap(barricade_prefab, option.barricade_spawn_trial, option.barricade_spawn_size, width, height, offset_position);
+            generateMap(energy_prefab, option.energy_spawn_trial, option.energy_spawn_size_max, option.energy_spawn_size_min, width, height, offset_position);
+
+            generateMap(barricade_prefab, option.barricade_spawn_trial, option.barricade_spawn_size_max, option.barricade_spawn_size_min, width, height, offset_position);
         }
 
-        public void generateMap(MapObject targetPrefab, int spawnTrial, int spawnSize, int width, int height, Vector2 map_position) {
+        public void generateMap(MapObject targetPrefab, int spawnTrial, float sizeMax, float sizeMin, int width, int height, Vector2 map_position) {
             int texture_width = insect_mask.width;
             int texture_height = insect_mask.height;
 
@@ -58,7 +61,7 @@ namespace Hsinpa {
                 int pixel_x = m_random_engine.Next(texture_width);
                 int pixel_y = m_random_engine.Next(texture_height);
 
-                float random_size = Random.Range(1f, 2f);
+                float random_size = Random.Range(sizeMin, sizeMax);
 
                 Color mask = this.insect_mask.GetPixel(pixel_x, pixel_y);
 
