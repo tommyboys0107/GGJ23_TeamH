@@ -15,6 +15,12 @@ namespace Hsinpa {
         [SerializeField]
         private MapObject barricade_prefab;
 
+        [SerializeField]
+        private int border_width = 1;
+
+        [SerializeField]
+        private Vector3 offset_position;
+
         private System.Random m_random_engine;
 
         List<MapObject> _map_objects = new List<MapObject>();
@@ -30,12 +36,15 @@ namespace Hsinpa {
             option.barricade_spawn_trial = 10;
             option.barricade_spawn_size = 3;
 
+            Debug.Log($"Width {insect_mask.width}, Height {insect_mask.height}");
 
-            int width = 10;
-            int height = 10;
 
-            generateMap(energy_prefab, option.energy_spawn_trial, option.energy_spawn_size, width, height, new Vector2(-width * 0.5f, -height * 0.5f));
-            generateMap(barricade_prefab, option.barricade_spawn_trial, option.barricade_spawn_size, width, height, new Vector2(-width * 0.5f, -height * 0.5f));
+            float aspect_ratio = insect_mask.height / (float) insect_mask.width;
+            int width = border_width;
+            int height = Mathf.RoundToInt(width * aspect_ratio);
+
+            generateMap(energy_prefab, option.energy_spawn_trial, option.energy_spawn_size, width, height, offset_position);
+            generateMap(barricade_prefab, option.barricade_spawn_trial, option.barricade_spawn_size, width, height, offset_position);
         }
 
         public void generateMap(MapObject targetPrefab, int spawnTrial, int spawnSize, int width, int height, Vector2 map_position) {
@@ -49,11 +58,11 @@ namespace Hsinpa {
                 int pixel_x = m_random_engine.Next(texture_width);
                 int pixel_y = m_random_engine.Next(texture_height);
 
-                int random_size = m_random_engine.Next(spawnSize - 1) + 1;
+                float random_size = Random.Range(1f, 2f);
 
                 Color mask = this.insect_mask.GetPixel(pixel_x, pixel_y);
 
-                if (mask.r > 0.1) continue;
+                if (mask.r > 0.1 || mask.a < 0.5) continue;
 
                 float x_ratio = pixel_x / (float)texture_width;
                 float y_ratio = pixel_y / (float)texture_height;
@@ -85,7 +94,20 @@ namespace Hsinpa {
             }
         }
 
+        private void OnDrawGizmos()
+        {
+            float aspect_ratio = insect_mask.height / (float)insect_mask.width;
+            int width = border_width;
+            int height = Mathf.RoundToInt(width * aspect_ratio);
 
+            Vector3 center = new Vector3(
+                offset_position.x + (width * 0.5f),
+                offset_position.y + (height * 0.5f), 1
+            );
+
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireCube(center, new Vector3(width, height, 1));
+        }
 
     }
 }
