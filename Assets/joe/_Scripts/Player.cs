@@ -19,16 +19,23 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
          if(collision.transform.tag == "Nutrition")
         {
             //gm.EnterPoint(collision.transform);
             //collision.enabled = false;
             //collision.transform.localScale = collision.transform.localScale * 0.5f;
         }
+
         if (collision.transform.tag == "Barricade")
         {
             //gm.EnterDead();
             //collision.gameObject.SetActive(false);
+        }
+
+        if (collision.transform.tag == "Brain")
+        {
+            Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameSuccessEvent, gm);
         }
     }
 

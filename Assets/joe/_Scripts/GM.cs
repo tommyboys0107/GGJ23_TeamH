@@ -47,6 +47,8 @@ public class GM : MonoBehaviour
     {
         if (hp <= 0)
         {
+            Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent, this);
+
             return;
         }
         hp -= Time.deltaTime;
