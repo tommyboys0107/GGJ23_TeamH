@@ -8,6 +8,7 @@ interface IPlayer
 
     void RemoveNutrition(float value);
 
-    void SpeedUP();
+    void ReturnToLastCheckPoint();
+
 
 }

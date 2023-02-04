@@ -5,6 +5,8 @@ using UnityEngine;
 namespace Hsinpa.Utility {
     public static class SimpleEventSystem
     {
+        public enum Tag {OnGameOver, AddNutrition, OnObstacleHit };
+
         public static System.Action<int, object[]> CustomEventListener;
         public static System.Action OnDisposeEvent;
 

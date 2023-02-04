@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Playables;
+using Hsinpa.Utility;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +14,17 @@ public class GameManager : MonoBehaviour
     private bool isStarted;
 
     private bool isEnded;
+
+
+    private void OnEnable()
+    {
+        SimpleEventSystem.CustomEventListener += OnGameOver;
+    }
+
+    private void OnDisable()
+    {
+        SimpleEventSystem.CustomEventListener -= OnGameOver;
+    }
 
 
     void Awake()
@@ -63,6 +74,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void OnGameOver(int tag, object[] objects)
+    {
+        if(tag == (int)SimpleEventSystem.Tag.OnGameOver)
+        {
+            EndGame();
+        }
+    }
 
 }

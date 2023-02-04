@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Hsinpa.Utility;
 
-public class PlayerController : MonoBehaviour, IPlayer
+public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 4f;
@@ -14,6 +15,18 @@ public class PlayerController : MonoBehaviour, IPlayer
 
     [SerializeField]
     private float currentNutrition;
+
+    private void OnEnable()
+    {
+        SimpleEventSystem.CustomEventListener += AddNutrition;
+        SimpleEventSystem.CustomEventListener += ReturnToLastCheckPoint;
+    }
+
+    private void OnDisable()
+    {
+        SimpleEventSystem.CustomEventListener -= AddNutrition;
+        SimpleEventSystem.CustomEventListener -= ReturnToLastCheckPoint;
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,6 +44,7 @@ public class PlayerController : MonoBehaviour, IPlayer
         {
             SendEndGame();
         }
+        
     }
 
     private void Move()
@@ -41,9 +55,13 @@ public class PlayerController : MonoBehaviour, IPlayer
         transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
     }
 
-    public void AddNutrition(float value)
+    public void AddNutrition(int tag, object[] value)
     {
-        currentNutrition += value;
+        if(tag == (int)SimpleEventSystem.Tag.AddNutrition)
+        {
+            currentNutrition += (float)value[0];
+        }
+        
     }
 
     public void RemoveNutrition(float value)
@@ -51,13 +69,17 @@ public class PlayerController : MonoBehaviour, IPlayer
 
     }
 
-    public void SpeedUP()
+    public void ReturnToLastCheckPoint(int tag, object[] objects)
     {
-
+        if(tag == (int)SimpleEventSystem.Tag.OnObstacleHit)
+        {
+            Debug.Log("The Head Has Returned to the Last Check Point");
+        }
+        
     }
 
     public void SendEndGame()
     {
-        gameObject.SendMessage("EndGame");
+        SimpleEventSystem.Send((int)SimpleEventSystem.Tag.OnGameOver);
     }
 }

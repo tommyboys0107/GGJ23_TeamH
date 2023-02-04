@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using Hsinpa.Utility;
 
 public class Nutrition : MonoBehaviour
 {
@@ -36,13 +37,13 @@ public class Nutrition : MonoBehaviour
         maxNutritionValue = totalNutritionValue;
     }
 
-
-
     private IEnumerator ProvideNutritionRoutine(IPlayer playerController)
     {
         while (totalNutritionValue > 0)
         {
-            playerController.AddNutrition(nutritionOverTime);
+            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime);
+
+            //playerController.AddNutrition(nutritionOverTime);
 
             totalNutritionValue -= nutritionOverTime;
 
@@ -68,7 +69,7 @@ public class Nutrition : MonoBehaviour
 
             if (!isProviding)
             {
-                StartCoroutine(ProvideNutritionRoutine(collision.gameObject.GetComponent<PlayerController>()));
+                StartCoroutine(ProvideNutritionRoutine(collision.gameObject.GetComponent<IPlayer>()));
 
                 isProviding = true;
             }
