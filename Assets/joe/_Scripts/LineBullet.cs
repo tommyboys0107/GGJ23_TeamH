@@ -36,7 +36,7 @@ public class LineBullet : MonoBehaviour
         hp -= Time.deltaTime;
         if(hp <= 0)
         {
-            //GM.AddLineEvent -= AddNewLine;
+            GM.AddLineEvent -= AddNewLine;
             Destroy(this);
             return;
         }

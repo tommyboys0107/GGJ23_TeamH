@@ -29,8 +29,8 @@ public class GM : MonoBehaviour
 
     public GameObject OverUI;
 
-    public bool BottonDown;
-
+    public bool BottonDownR;
+    public bool BottonDownL;
     public delegate void AddLine();
     public static event AddLine AddLineEvent;
     // Start is called before the first frame update
@@ -73,27 +73,36 @@ public class GM : MonoBehaviour
         {
            
             P.transform.Rotate(Vector3.forward * RotaSpeed * Time.deltaTime);
-            BottonDown = true;
+            BottonDownR = true;
         }
         else
         if (Input.GetKey(KeyCode.LeftArrow))
         {
            
             P.transform.Rotate(Vector3.forward * -RotaSpeed * Time.deltaTime);
-            BottonDown = true;
+            BottonDownL = true;
         }
         else
         {
-            if (BottonDown == true)
+            if (BottonDownR == true)
             {
-                GameObject g =  Instantiate(LinePrefab, P.transform.position, P.transform.rotation);
+                GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + -90));
                 g.GetComponent<LineBullet>().hp = hp / 2;
                 hp = hp / 2;
-                
-                AddLineEvent?.Invoke();
 
+                AddLineEvent?.Invoke();
+                BottonDownR = false;
             }
-            BottonDown = false;
+
+            if (BottonDownL == true)
+            {
+                GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + 90));
+                g.GetComponent<LineBullet>().hp = hp / 2;
+                hp = hp / 2;
+
+                AddLineEvent?.Invoke();
+                BottonDownL = false;
+            }
         }
         P.transform.position += -P.transform.up * Time.deltaTime * MoveSpeed;
         Camera.main.transform.position = new Vector3(P.position.x, P.position.y, Camera.main.transform.position.z);
