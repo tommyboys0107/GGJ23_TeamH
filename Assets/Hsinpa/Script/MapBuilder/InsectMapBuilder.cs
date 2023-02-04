@@ -16,7 +16,10 @@ namespace Hsinpa {
         private MapObject barricade_prefab;
 
         [SerializeField]
-        private int border_width = 1;
+        private float border_width = 1;
+
+        [SerializeField]
+        private GameObject insectTextureHolder;
 
         [SerializeField]
         private Vector3 offset_position;
@@ -42,13 +45,14 @@ namespace Hsinpa {
 
         private System.Random m_random_engine;
 
+        [SerializeField]
+        private bool debugModeFlag = false;
 
 
-
-        public int width => border_width;
-        public int height { get {
+        public float width => border_width;
+        public float height { get {
                 float aspect_ratio = insect_mask.height / (float)insect_mask.width;
-                return Mathf.RoundToInt(border_width * aspect_ratio);
+                return (border_width * aspect_ratio);
             }
         }
 
@@ -66,7 +70,13 @@ namespace Hsinpa {
 
         List<MapObject> _map_objects = new List<MapObject>();
 
-        private void Awake()
+        public void Start()
+        {
+            if (debugModeFlag)
+                AutoBuild();
+        }
+
+        public void AutoBuild()
         {
             m_random_engine = new System.Random();
 
@@ -82,15 +92,17 @@ namespace Hsinpa {
             Debug.Log($"Width {insect_mask.width}, Height {insect_mask.height}");
 
             float aspect_ratio = insect_mask.height / (float) insect_mask.width;
-            int width = border_width;
-            int height = Mathf.RoundToInt(width * aspect_ratio);
+            float width = border_width;
+            float height = (width * aspect_ratio);
 
             generateMap(energy_prefab, option.energy_spawn_trial, option.energy_spawn_size_max, option.energy_spawn_size_min, width, height, offset_position);
-
             generateMap(barricade_prefab, option.barricade_spawn_trial, option.barricade_spawn_size_max, option.barricade_spawn_size_min, width, height, offset_position);
+
+            if (insectTextureHolder != null)
+                insectTextureHolder.gameObject.SetActive(true);
         }
 
-        public void generateMap(MapObject targetPrefab, int spawnTrial, float sizeMax, float sizeMin, int width, int height, Vector2 map_position) {
+        public void generateMap(MapObject targetPrefab, int spawnTrial, float sizeMax, float sizeMin, float width, float height, Vector2 map_position) {
             int texture_width = insect_mask.width;
             int texture_height = insect_mask.height;
 
