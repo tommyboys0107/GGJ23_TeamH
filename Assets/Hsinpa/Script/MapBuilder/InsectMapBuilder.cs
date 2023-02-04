@@ -81,7 +81,6 @@ namespace Hsinpa {
 
             Debug.Log($"Width {insect_mask.width}, Height {insect_mask.height}");
 
-
             float aspect_ratio = insect_mask.height / (float) insect_mask.width;
             int width = border_width;
             int height = Mathf.RoundToInt(width * aspect_ratio);
@@ -99,7 +98,10 @@ namespace Hsinpa {
             for (int i = 0; i < spawnTrial; i++)
             {
                 int mapObjectLens = _map_objects.Count;
-                int pixel_x = m_random_engine.Next(texture_width);
+
+                //Avoid barricade at start point
+                float threshold = 0.9f;
+                int pixel_x = Random.Range(0, Mathf.RoundToInt(texture_width * threshold));
                 int pixel_y = m_random_engine.Next(texture_height);
 
                 float random_size = Random.Range(sizeMin, sizeMax);
