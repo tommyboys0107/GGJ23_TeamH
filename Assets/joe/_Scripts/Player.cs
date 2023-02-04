@@ -21,14 +21,14 @@ public class Player : MonoBehaviour
     {
          if(collision.transform.tag == "Nutrition")
         {
-            gm.EnterPoint(collision.transform);
-            collision.enabled = false;
-            collision.transform.localScale = collision.transform.localScale * 0.5f;
+            //gm.EnterPoint(collision.transform);
+            //collision.enabled = false;
+            //collision.transform.localScale = collision.transform.localScale * 0.5f;
         }
         if (collision.transform.tag == "Barricade")
         {
-            gm.EnterDead();
-            collision.gameObject.SetActive(false);
+            //gm.EnterDead();
+            //collision.gameObject.SetActive(false);
         }
     }
 
