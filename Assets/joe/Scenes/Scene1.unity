@@ -723,7 +723,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0, g: 1, b: 0.015138149, a: 1}
   m_FlipX: 0
@@ -798,7 +798,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -877,7 +877,7 @@ MonoBehaviour:
   - {x: 15.41, y: -0.72, z: 0}
   P: {fileID: 1170537344}
   RotaSpeed: 80
-  MoveSpeed: 2
+  MoveSpeed: 0.5
   LineUptateTime: 0.5
   LinePrefab: {fileID: 5580022061476951447, guid: 777b6e4c3941d4ae097ddbae243d221c, type: 3}
   deadPrefab: {fileID: 4698538015646849956, guid: 093c612528997114f9fa67994d20da58, type: 3}

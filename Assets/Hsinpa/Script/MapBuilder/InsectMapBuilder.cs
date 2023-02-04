@@ -23,6 +23,26 @@ namespace Hsinpa {
 
         private System.Random m_random_engine;
 
+
+        public int width => border_width;
+        public int height { get {
+                float aspect_ratio = insect_mask.height / (float)insect_mask.width;
+                return Mathf.RoundToInt(border_width * aspect_ratio);
+            }
+        }
+
+        private Vector3 _center = new Vector3();
+
+        public Vector3 center
+        {
+            get
+            {
+                _center.Set(offset_position.x + (width * 0.5f), offset_position.y + (height * 0.5f), 1);
+
+                return _center;
+            }
+        }
+
         List<MapObject> _map_objects = new List<MapObject>();
 
         private void Awake()
@@ -99,18 +119,8 @@ namespace Hsinpa {
 
         private void OnDrawGizmos()
         {
-            float aspect_ratio = insect_mask.height / (float)insect_mask.width;
-            int width = border_width;
-            int height = Mathf.RoundToInt(width * aspect_ratio);
-
-            Vector3 center = new Vector3(
-                offset_position.x + (width * 0.5f),
-                offset_position.y + (height * 0.5f), 1
-            );
-
             Gizmos.color = Color.blue;
             Gizmos.DrawWireCube(center, new Vector3(width, height, 1));
         }
-
     }
 }
