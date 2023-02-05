@@ -8,10 +8,11 @@ public class Obstacle : MapObject
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().tag == "Player")
-        {
 
-            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.OnObstacleHit);
+        if (collision.GetComponent<Collider2D>().tag == "Player" && transform.name != "LinePrefab")
+        {
+            Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent, collision.transform.parent.GetComponent<GM>());
+
         }
     }
 }

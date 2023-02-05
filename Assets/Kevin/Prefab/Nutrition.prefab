@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3572641856278876328}
   - component: {fileID: 3572641856278876329}
   - component: {fileID: 3572641856278876326}
+  - component: {fileID: -6111050160464796123}
   m_Layer: 0
   m_Name: Nutrition
   m_TagString: Untagged
@@ -113,3 +114,24 @@ MonoBehaviour:
   nutritionOverTime: 1
   maxNutritionValue: 0
   thisCollider: {fileID: 0}
+--- !u!50 &-6111050160464796123
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572641856278876330}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

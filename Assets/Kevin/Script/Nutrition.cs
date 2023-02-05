@@ -24,6 +24,10 @@ public class Nutrition : EnergyObject
     protected PolygonCollider2D thisCollider;
 
     protected bool isProviding;
+
+    int enterTimes;
+
+    float enterMultiplier;
    
 
     // Start is called before the first frame update
@@ -31,7 +35,7 @@ public class Nutrition : EnergyObject
     {
         if (!thisCollider)
         {
-            Debug.LogWarning($"Collder2D doesn't exist on  { transform.name}");
+            //Debug.LogWarning($"Collder2D doesn't exist on  { transform.name}");
         }
 
         currentScale = transform.localScale;
@@ -45,13 +49,14 @@ public class Nutrition : EnergyObject
             thisCollider = this.gameObject.AddComponent<PolygonCollider2D>();
         }
 
+        enterMultiplier = enterTimes * .55f;
     }
 
-    private IEnumerator ProvideNutritionRoutine(IPlayer playerController)
+    private IEnumerator ProvideNutritionRoutine()
     {
         while (totalNutritionValue > 0)
         {
-            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime);
+            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime *(1+enterMultiplier));
 
             //playerController.AddNutrition(nutritionOverTime);
 
@@ -76,9 +81,12 @@ public class Nutrition : EnergyObject
         if (collision.GetComponent<Collider2D>().tag == "Player")
         {
 
+            enterTimes++;
+
+
             if (!isProviding)
             {
-                StartCoroutine(ProvideNutritionRoutine(collision.gameObject.GetComponent<IPlayer>()));
+                StartCoroutine(ProvideNutritionRoutine());
 
                 isProviding = true;
             }
