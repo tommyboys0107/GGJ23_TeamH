@@ -5,6 +5,8 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using DG.Tweening;
 using TMPro;
+using Hsinpa.Utility;
+using System.Security.Cryptography;
 
 public class BeginTimelineCtrl : MonoBehaviour
 {
@@ -45,15 +47,13 @@ public class BeginTimelineCtrl : MonoBehaviour
                 branch_player.gameObject.SetActive(true);
         };
 
-        Hsinpa.Utility.SimpleEventSystem.CustomEventListener += (id, parameters) =>
-        {
-            if (id == Hsinpa.GeneralStaticFlag.EventFlag.GameSuccessEvent && parameters.Length == 1)
-                OnBrainHitEvent((GM)parameters[0], true);
+        Hsinpa.Utility.SimpleEventSystem.CustomEventListener += Onstart;
+    }
 
-            if (id == Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent && parameters.Length == 1)
-                OnBrainHitEvent((GM)parameters[0], false);
 
-        };
+    private void OnDisable()
+    {
+        SimpleEventSystem.CustomEventListener -= Onstart;
     }
 
     public void Update()
@@ -74,5 +74,15 @@ public class BeginTimelineCtrl : MonoBehaviour
 
             if (end_game_text != null) end_game_text.gameObject.SetActive(true);
         };
+    }
+
+    private void Onstart(int id, object[] parameters)
+    {
+
+        if (id == Hsinpa.GeneralStaticFlag.EventFlag.GameSuccessEvent && parameters.Length == 1)
+            OnBrainHitEvent((GM)parameters[0], true);
+
+        if (id == Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent && parameters.Length == 1)
+            OnBrainHitEvent((GM)parameters[0], false);
     }
 }

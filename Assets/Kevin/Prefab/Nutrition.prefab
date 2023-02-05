@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3867215440b27476eafba48f972b3e79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3572641856278876326
@@ -99,15 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 3572641856278876329}
+  sprites:
+  - {fileID: 21300000, guid: 8b5d78c5e7deb4e878255974e38872b3, type: 3}
+  - {fileID: 21300000, guid: 635f7328d60474d43b4a7f62f8de7ad8, type: 3}
+  - {fileID: 21300000, guid: 2cef29e6ff2614146a2c44a5e12168df, type: 3}
+  - {fileID: 21300000, guid: 58c94df61ac304667a50354f70d62b46, type: 3}
+  - {fileID: 21300000, guid: 02006d99cec2f4f9b842b5b7890c51d4, type: 3}
   original_energy: 0
   energy: 0
   size: {x: 0, y: 0}
-  sprites:
-  - {fileID: 21300000, guid: 3867215440b27476eafba48f972b3e79, type: 3}
-  - {fileID: 21300000, guid: b988c0f9fd1eb4b23a9134ba61e3ce90, type: 3}
-  - {fileID: 21300000, guid: abd3d97b4795c4babb248a847d4f79ce, type: 3}
-  - {fileID: 21300000, guid: ba7b6b1dc517e46f29de6445689f0189, type: 3}
-  - {fileID: 21300000, guid: 5fc556593d8884cf7bdcf3203750f22a, type: 3}
   duration: 10
   interval: 0.5
   totalNutritionValue: 20
