@@ -68,17 +68,24 @@ public class BeginTimelineCtrl : MonoBehaviour
 
     public void Update()
     {
-        if (game_end_flag && Input.GetKeyDown(KeyCode.Space)) {
+        if (game_end_flag && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R)) {
             var currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
             UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.name, UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
-
-        if (Input.GetKeyDown(KeyCode.S))
+        
+        // Skip timeline to start game
+        if (Input.GetKeyDown(KeyCode.S)) 
         {
             timelime.Stop();
             _mainCamera.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
             _mainCamera.DOOrthoSize(start_game_cam_size, 1);
         }
+        
+        // Close application
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        } 
     }
 
     private void OnBrainHitEvent(GM gm, bool isSuccess) {
