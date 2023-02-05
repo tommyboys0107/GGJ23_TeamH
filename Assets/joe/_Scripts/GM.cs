@@ -44,6 +44,7 @@ public class GM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxPH= hp;
         MainGM = this;
         Line = gameObject.GetComponent<LineRenderer>();
         insectMapBuilder = GameObject.FindObjectOfType<Hsinpa.InsectMapBuilder>(includeInactive: true);
