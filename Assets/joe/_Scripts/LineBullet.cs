@@ -71,7 +71,7 @@ public class LineBullet : MonoBehaviour
             }                
         }
 
-
+        Line.colorGradient = GM.MainGM.Line.colorGradient;
         LineMove();
         LineUpdate();
     }
