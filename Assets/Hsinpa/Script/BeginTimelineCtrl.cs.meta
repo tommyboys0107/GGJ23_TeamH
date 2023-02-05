@@ -3,7 +3,12 @@ guid: f1eda64a8f3d6b54fa0d3ca9e08e52e2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - timelime: {instanceID: 0}
+  - insectMapBuilder: {instanceID: 0}
+  - branch_player: {instanceID: 0}
+  - end_game_text: {instanceID: 0}
+  - explotion: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

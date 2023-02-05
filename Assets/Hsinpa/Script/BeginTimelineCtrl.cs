@@ -32,9 +32,10 @@ public class BeginTimelineCtrl : MonoBehaviour
     private float end_game_cam_size = 4;
 
     private bool game_end_flag = false;
-
+    
     Camera _mainCamera;
 
+    public GameObject explotion;
     private void Awake()
     {
         Hsinpa.Utility.SimpleEventSystem.Dispose();
@@ -101,7 +102,7 @@ public class BeginTimelineCtrl : MonoBehaviour
             game_end_flag = true;
 
             if (end_game_text != null) end_game_text.gameObject.SetActive(true);
-
+                else Instantiate(explotion,transform.position, Quaternion.identity);
             if (!isSuccess)
             {
                 end_game_text.color = Color.red;

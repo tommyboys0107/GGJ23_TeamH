@@ -16,9 +16,14 @@ public class GM : MonoBehaviour
     public float LineUptateTime = 0.5f;
     float t;
 
+//Updated upstream
     float maxPH = 100f;
+//
+    public GameObject explotion;
+// Stashed changes
     public GameObject LinePrefab;
     public GameObject deadPrefab;
+    public GameObject Split;
 
     public List<Transform> points = new List<Transform>();
     public float PointUptateTime = 2f;
@@ -110,8 +115,10 @@ public class GM : MonoBehaviour
         {
             if (BottonDownR == true)
             {
-                GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + -90));
-                //Instantiate(pp);
+// Updated upstream
+             GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + -90));
+                Instantiate(Split, P.transform.position, Quaternion.identity);
+//Stashed changes
                 g.GetComponent<LineBullet>().hp = hp * HPscale;
                 hp = hp - hp * HPscale;
 
@@ -122,12 +129,19 @@ public class GM : MonoBehaviour
             if (BottonDownL == true)
             {
                 GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + 90));
+<<<<<<< Updated upstream
 
 
                 //Instantiate(pp);
                 bullet = g.GetComponent<LineBullet>();
                 bullet.hp = hp * HPscale;
                 bullet.RotaSpeed = bullet.RotaSpeed * -1;
+=======
+// Updated upstream
+                Instantiate(Split, P.transform.position, Quaternion.identity);
+// Stashed changes
+                g.GetComponent<LineBullet>().hp = hp * HPscale;
+>>>>>>> Stashed changes
                 hp = hp - hp * HPscale;
 
                 AddLineEvent?.Invoke();
