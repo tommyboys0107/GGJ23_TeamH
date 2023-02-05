@@ -1164,6 +1164,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3710911288656132913, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: m_TagString
+      value: Brain
+      objectReference: {fileID: 0}
     - target: {fileID: 7890478507912238744, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2315,9 +2319,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -3.4667366e-10, y: 0.0029081102}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.06326971
 --- !u!212 &1862315236
 SpriteRenderer:
   m_ObjectHideFlags: 0

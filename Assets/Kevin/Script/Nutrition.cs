@@ -24,6 +24,7 @@ public class Nutrition : EnergyObject
     protected PolygonCollider2D thisCollider;
 
     protected bool isProviding;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,13 @@ public class Nutrition : EnergyObject
         currentScale = transform.localScale;
 
         maxNutritionValue = totalNutritionValue;
+
+        if (sprites != null && sprites.Length > 0)
+        {
+            spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
+
+        }
+
     }
 
     private IEnumerator ProvideNutritionRoutine(IPlayer playerController)

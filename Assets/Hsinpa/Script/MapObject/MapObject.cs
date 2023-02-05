@@ -11,7 +11,7 @@ namespace Hsinpa
         public SpriteRenderer spriteRenderer => _spriteRenderer;
 
         [SerializeField]
-        private Sprite[] sprites;
+        protected Sprite[] sprites;
 
         private PolygonCollider2D polygonCollider;
 

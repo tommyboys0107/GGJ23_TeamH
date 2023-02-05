@@ -49,13 +49,13 @@ public class BeginTimelineCtrl : MonoBehaviour
                 branch_player.gameObject.SetActive(true);
         };
 
-        Hsinpa.Utility.SimpleEventSystem.CustomEventListener += Onstart;
+        Hsinpa.Utility.SimpleEventSystem.CustomEventListener += OnGameEnd;
     }
 
 
     private void OnDisable()
     {
-        SimpleEventSystem.CustomEventListener -= Onstart;
+        SimpleEventSystem.CustomEventListener -= OnGameEnd;
     }
 
     public void Update()
@@ -82,10 +82,15 @@ public class BeginTimelineCtrl : MonoBehaviour
             game_end_flag = true;
 
             if (end_game_text != null) end_game_text.gameObject.SetActive(true);
+
+            if (!isSuccess)
+            {
+                end_game_text.color = Color.red;
+            }
         };
     }
 
-    private void Onstart(int id, object[] parameters)
+    private void OnGameEnd(int id, object[] parameters)
     {
 
         if (id == Hsinpa.GeneralStaticFlag.EventFlag.GameSuccessEvent && parameters.Length == 1)
