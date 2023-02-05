@@ -155,7 +155,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c8c9243816964d7e81134b39a7bd5e9, type: 2}
+  - {fileID: 2100000, guid: 1deec671ed442489c893c2ed3c52def4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   RandomRota: {x: -10, y: 10}
   RandomTime: 1
   LinePrefab: {fileID: 5580022061476951447}
+  num: 4
 --- !u!1 &5580022062763447178
 GameObject:
   m_ObjectHideFlags: 0
