@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using Hsinpa.Utility;
 using Hsinpa;
@@ -57,11 +59,9 @@ public class Nutrition : EnergyObject
     {
         while (totalNutritionValue > 0)
         {
-            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime );
+            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime * (1+enterMultiplier));
 
-            //playerController.AddNutrition(nutritionOverTime);
-
-            totalNutritionValue -= nutritionOverTime;
+            totalNutritionValue -= nutritionOverTime * (1 + enterMultiplier);
 
             scaleMultiplier =  totalNutritionValue / maxNutritionValue;
 
@@ -81,6 +81,9 @@ public class Nutrition : EnergyObject
     {
         if (collision.GetComponent<Collider2D>().tag == "Player")
         {
+            enterTimes++;
+
+            enterMultiplier = enterTimes * 0.25f;
 
             if (!isProviding)
             {
