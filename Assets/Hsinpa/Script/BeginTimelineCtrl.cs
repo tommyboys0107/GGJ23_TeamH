@@ -91,6 +91,8 @@ public class BeginTimelineCtrl : MonoBehaviour
             if (!isSuccess)
             {
                 end_game_text.color = Color.red;
+
+
             }
         };
     }

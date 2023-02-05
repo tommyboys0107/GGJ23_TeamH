@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.699936, g: 0.55918545, b: 0.38021097, a: 1}
+  m_IndirectSpecularColor: {r: 0.6997336, g: 0.5594266, b: 0.38041604, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1192,6 +1192,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: energy_prefab
+      value: 
+      objectReference: {fileID: 3572641856278876326, guid: 81a57839424e1164a8487959c303841b, type: 3}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: barricade_prefab
+      value: 
+      objectReference: {fileID: 277563677, guid: e1ca863ec39deb54593518cb7b58296f, type: 3}
     - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: barricade_max_size
       value: 0.05

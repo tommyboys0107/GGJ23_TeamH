@@ -81,9 +81,6 @@ public class Nutrition : EnergyObject
         if (collision.GetComponent<Collider2D>().tag == "Player")
         {
 
-            enterTimes++;
-
-
             if (!isProviding)
             {
                 StartCoroutine(ProvideNutritionRoutine());
