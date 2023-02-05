@@ -8,7 +8,7 @@ public class GM : MonoBehaviour
 {
     public static GM MainGM;
     public float hp = 100;
-    LineRenderer Line;
+    public LineRenderer Line;
     public Vector3[] v3s;
     public Transform P;//player
     public float RotaSpeed = 20;
