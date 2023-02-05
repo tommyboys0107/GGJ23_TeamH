@@ -2080,7 +2080,7 @@ MonoBehaviour:
   OverUI: {fileID: 0}
   BottonDownR: 0
   BottonDownL: 0
-  HPscale: 0.5
+  HPscale: 0.35
   pp: {fileID: 0}
   LineOverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1262554776
