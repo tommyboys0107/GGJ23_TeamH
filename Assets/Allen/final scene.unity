@@ -2065,8 +2065,10 @@ MonoBehaviour:
   RotaSpeed: 80
   MoveSpeed: 0.04
   LineUptateTime: 0.5
+  explotion: {fileID: 0}
   LinePrefab: {fileID: 5580022061476951447, guid: 777b6e4c3941d4ae097ddbae243d221c, type: 3}
   deadPrefab: {fileID: 4698538015646849956, guid: 093c612528997114f9fa67994d20da58, type: 3}
+  Split: {fileID: 3760600395755583381, guid: 4103a07fc77a681448b71c23d8ae7352, type: 3}
   points: []
   PointUptateTime: 2
   met: {fileID: 2100000, guid: 1deec671ed442489c893c2ed3c52def4, type: 2}
@@ -2610,6 +2612,7 @@ MonoBehaviour:
   end_game_cam_position: {x: -6.432, y: 0.388, z: 3.65}
   end_game_text: {fileID: 570005039}
   end_game_cam_size: 0.64
+  explotion: {fileID: 0}
 --- !u!1 &1692871754
 GameObject:
   m_ObjectHideFlags: 0
