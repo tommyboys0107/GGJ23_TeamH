@@ -1,3 +1,4 @@
+using CliffLeeCL;
 using Hsinpa;
 using Hsinpa.Utility;
 using System.Collections;
@@ -12,6 +13,7 @@ public class Obstacle : MapObject
         {
             Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent, collision.transform.parent.GetComponent<GM>());
 
+            AudioManager.Instance.PlaySound(AudioManager.AudioName.BarricadeHit);
         }
     }
 }

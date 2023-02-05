@@ -11,12 +11,10 @@ namespace CliffLeeCL
     {
         public enum AudioName
         {
-            ButtonClicked,
-            EnemyDead1,
-            EnemyDead2,
-            EnemyDead3,
-            EnemySlash,
-            Fail,
+            Victory,
+            GameOver,
+            EnergyHit,
+            BarricadeHit,
             Pass
         }
 

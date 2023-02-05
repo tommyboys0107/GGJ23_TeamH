@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Hsinpa.Utility;
 using Hsinpa;
+using CliffLeeCL;
 
 public class Nutrition : EnergyObject
 {
@@ -86,6 +87,8 @@ public class Nutrition : EnergyObject
                 StartCoroutine(ProvideNutritionRoutine());
 
                 isProviding = true;
+
+                AudioManager.Instance.PlaySound(AudioManager.AudioName.EnergyHit);
             }
         }
     }

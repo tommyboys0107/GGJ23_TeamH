@@ -7,6 +7,7 @@ using DG.Tweening;
 using TMPro;
 using Hsinpa.Utility;
 using System.Security.Cryptography;
+using CliffLeeCL;
 
 public class BeginTimelineCtrl : MonoBehaviour
 {
@@ -90,6 +91,9 @@ public class BeginTimelineCtrl : MonoBehaviour
 
     private void OnBrainHitEvent(GM gm, bool isSuccess) {
         gm.enabled = false;
+
+        var audioIndex = (isSuccess) ? AudioManager.AudioName.Victory : AudioManager.AudioName.GameOver;
+        AudioManager.Instance.PlaySound(audioIndex);
 
         float anim_duration = 2;
         _mainCamera.transform.DOMove(end_game_cam_position, anim_duration);
