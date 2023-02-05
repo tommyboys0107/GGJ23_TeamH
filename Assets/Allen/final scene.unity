@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.6997336, g: 0.5594266, b: 0.38041604, a: 1}
+  m_IndirectSpecularColor: {r: 0.699936, g: 0.55918545, b: 0.38021097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1192,9 +1192,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: barricade_max_size
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: energy_spawn_trial
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: barricade_spawn_trial
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 7890478507912238746, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_Name
       value: MapBuilder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890478508166086133, guid: dc23014f39afe4759900e179f19d8577, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc23014f39afe4759900e179f19d8577, type: 3}
@@ -1666,7 +1682,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.05
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1790,7 +1806,7 @@ MonoBehaviour:
   - {x: -5.559, y: 0.325, z: 0.517}
   P: {fileID: 1862315232}
   RotaSpeed: 80
-  MoveSpeed: 0.05
+  MoveSpeed: 0.04
   LineUptateTime: 0.5
   LinePrefab: {fileID: 5580022061476951447, guid: 777b6e4c3941d4ae097ddbae243d221c, type: 3}
   deadPrefab: {fileID: 4698538015646849956, guid: 093c612528997114f9fa67994d20da58, type: 3}

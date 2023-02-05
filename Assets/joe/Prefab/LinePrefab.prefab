@@ -163,7 +163,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.03
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -248,11 +248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   P: {fileID: 5580022062763447179}
-  RotaSpeed: 40
-  MoveSpeed: 0.1
+  RotaSpeed: 35
+  MoveSpeed: 0.02
   v3s:
   - {x: 0, y: 0, z: 0}
-  LineUptateTime: 0.5
+  LineUptateTime: 0.3
   RandomRota: {x: -10, y: 10}
   RandomTime: 1
   LinePrefab: {fileID: 5580022061476951447}
