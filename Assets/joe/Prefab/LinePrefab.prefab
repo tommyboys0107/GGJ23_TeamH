@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1223496267706766801}
   m_LocalRotation: {x: -0, y: -0, z: -0.9242687, w: 0.38174236}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5580022062763447179}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5580022061476951444}
   m_Layer: 0
   m_Name: LinePrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,13 +163,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.030975342
-        value: 0.3655919
+        time: 0.03407669
+        value: 0.7769383
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -177,8 +177,17 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.6581798
+        value: 0.40862182
+        inSlope: -0.9775555
+        outSlope: -0.9775555
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 1
-        value: 0.15748507
+        value: 0.114928305
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -240,7 +249,7 @@ MonoBehaviour:
   hp: 100
   P: {fileID: 5580022062763447179}
   RotaSpeed: 40
-  MoveSpeed: 2
+  MoveSpeed: 0.1
   v3s:
   - {x: 0, y: 0, z: 0}
   LineUptateTime: 0.5
@@ -257,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5580022062763447179}
   - component: {fileID: 5580022062763447176}
+  - component: {fileID: 6098577956363369313}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Player
@@ -332,3 +342,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6098577956363369313
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580022062763447178}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.005
