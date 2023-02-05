@@ -16,7 +16,7 @@ public class GM : MonoBehaviour
     public float LineUptateTime = 0.5f;
     float t;
 
-
+    float maxPH = 100f;
     public GameObject LinePrefab;
     public GameObject deadPrefab;
 
@@ -40,12 +40,14 @@ public class GM : MonoBehaviour
     public float HPscale = 0.25f;
     private bool deadFlag = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
         MainGM = this;
         Line = gameObject.GetComponent<LineRenderer>();
         insectMapBuilder = GameObject.FindObjectOfType<Hsinpa.InsectMapBuilder>(includeInactive: true);
+        StartColor = Line.startColor;
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class GM : MonoBehaviour
         {
             Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent, this);
             deadFlag = true;
+            isAlive = false;
             return;
         }
 
@@ -72,7 +75,7 @@ public class GM : MonoBehaviour
             PlayerMove();
 
             LineUpdate();
-
+            SetColor();
             //AddObject();
         }
         else
@@ -83,7 +86,7 @@ public class GM : MonoBehaviour
             }
         }
     }
- 
+    public GameObject pp;
     protected void PlayerMove()
     {
         
@@ -106,6 +109,7 @@ public class GM : MonoBehaviour
             if (BottonDownR == true)
             {
                 GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + -90));
+                //Instantiate(pp);
                 g.GetComponent<LineBullet>().hp = hp * HPscale;
                 hp = hp - hp * HPscale;
 
@@ -116,6 +120,7 @@ public class GM : MonoBehaviour
             if (BottonDownL == true)
             {
                 GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + 90));
+                //Instantiate(pp);
                 g.GetComponent<LineBullet>().hp = hp * HPscale;
                 hp = hp - hp * HPscale;
 
@@ -169,7 +174,27 @@ public class GM : MonoBehaviour
         }
 
     }
+    public Color LineOverColor;
+    Color StartColor;
+    Color nowColor;
+    protected void SetColor()
+    {
+        Debug.Log("sc1");
+        if (hp < maxPH * 0.7f)
+        {
 
+            Debug.Log("sc");
+
+            nowColor = Color.Lerp(StartColor, LineOverColor, 1 - hp / maxPH);
+
+            Gradient gradient = new Gradient();
+            gradient.SetKeys(
+                new GradientColorKey[] { new GradientColorKey(nowColor, 0.0f), new GradientColorKey(nowColor, 1.0f) },
+                new GradientAlphaKey[] { new GradientAlphaKey(1, 0.0f), new GradientAlphaKey(1, 1.0f) }
+            );
+            Line.colorGradient = gradient;
+        }
+    }
     public void EnterPoint(Transform _point)
     {
         points.Add(_point);
