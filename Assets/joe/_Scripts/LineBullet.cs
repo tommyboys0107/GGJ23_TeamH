@@ -21,6 +21,7 @@ public class LineBullet : MonoBehaviour
 
     Hsinpa.InsectMapBuilder insectMapBuilder;
 
+    public int num = 4;
     void Start()
     {
         Line = gameObject.GetComponent<LineRenderer>();
@@ -42,7 +43,7 @@ public class LineBullet : MonoBehaviour
         hp -= Time.deltaTime;
         if(hp <= 0)
         {
-            GM.AddLineEvent -= AddNewLine;
+            //GM.AddLineEvent -= AddNewLine;
             Destroy(this);
             return;
         }
@@ -103,14 +104,22 @@ public class LineBullet : MonoBehaviour
     int n= 1;
     public void AddNewLine()
     {
-        GameObject g = Instantiate(GM.MainGM.LinePrefab, P.transform.position, P.transform.rotation);
-        float r = Random.Range(30, 80f);
-        g.transform.Rotate(Vector3.forward * r * Time.deltaTime);
-        
-        P.transform.Rotate(Vector3.forward * -r * Time.deltaTime);
-        rt = Time.time + 1;
-        g.GetComponent<LineBullet>().hp = hp * GM.MainGM.HPscale;
-        hp = hp - hp * GM.MainGM.HPscale;
-        
+        if (num > 0)
+        {
+            num -= 1;
+            GameObject g = Instantiate(GM.MainGM.LinePrefab, P.transform.position, P.transform.rotation);
+            float r = Random.Range(30, 80f);
+            g.transform.Rotate(Vector3.forward * r * Time.deltaTime);
+
+            P.transform.Rotate(Vector3.forward * -r * Time.deltaTime);
+            rt = Time.time + 1;
+            g.GetComponent<LineBullet>().hp = hp * GM.MainGM.HPscale;
+            hp = hp - hp * GM.MainGM.HPscale;
+        }
+    }
+
+    public void OnDestroy()
+    {
+        GM.AddLineEvent -= AddNewLine;
     }
 }
