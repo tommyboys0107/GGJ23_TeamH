@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.699936, g: 0.55918545, b: 0.38021097, a: 1}
+  m_IndirectSpecularColor: {r: 0.6997336, g: 0.5594266, b: 0.38041604, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2058,6 +2058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 500
+  Line: {fileID: 0}
   v3s:
   - {x: -5.559, y: 0.325, z: 0.517}
   P: {fileID: 1862315232}
@@ -2075,7 +2076,7 @@ MonoBehaviour:
   BottonDownL: 0
   HPscale: 0.25
   pp: {fileID: 0}
-  LineOverColor: {r: 0, g: 0, b: 0, a: 0}
+  LineOverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1262554776
 Transform:
   m_ObjectHideFlags: 0

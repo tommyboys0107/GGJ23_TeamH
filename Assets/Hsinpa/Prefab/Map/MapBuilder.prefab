@@ -766,8 +766,8 @@ MonoBehaviour:
   energy_spawn_trial: 35
   energy_max_size: 0.03
   energy_min_size: 0.01
-  barricade_spawn_trial: 35
-  barricade_max_size: 0.05
+  barricade_spawn_trial: 25
+  barricade_max_size: 0.02
   barricade_min_size: 0.01
   debugModeFlag: 0
 --- !u!1 &7890478507915341019
