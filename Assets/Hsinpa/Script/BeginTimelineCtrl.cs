@@ -34,6 +34,11 @@ public class BeginTimelineCtrl : MonoBehaviour
 
     Camera _mainCamera;
 
+    private void Awake()
+    {
+        Hsinpa.Utility.SimpleEventSystem.Dispose();
+    }
+
     public void Start()
     {
         _mainCamera = Camera.main;

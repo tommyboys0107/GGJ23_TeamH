@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2956489868450710198}
   m_Layer: 0
   m_Name: brain
-  m_TagString: Untagged
+  m_TagString: Brain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3710911288656132913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.225, y: 0.374, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: -5.02, y: 1.2, z: 0}
+  m_LocalScale: {x: 0.3485943, y: 0.3684457, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7890478508166086132}
@@ -583,7 +583,7 @@ MonoBehaviour:
   insectTextureHolder: {fileID: 7890478508166086133}
   offset_position: {x: -7.33, y: 0.06, z: 0}
   energy_spawn_trial: 25
-  energy_max_size: 0.02
+  energy_max_size: 0.03
   energy_min_size: 0.01
   barricade_spawn_trial: 15
   barricade_max_size: 0.02

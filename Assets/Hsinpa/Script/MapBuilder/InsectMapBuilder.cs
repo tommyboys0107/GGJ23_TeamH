@@ -130,7 +130,7 @@ namespace Hsinpa {
 
                 var spawnObject =  Instantiate(targetPrefab, this.transform);
                 spawnObject.transform.localScale = new Vector3(random_size, random_size, random_size);
-                spawnObject.transform.position = new Vector2( spawn_x + map_position.x, spawn_y + map_position.y);
+                spawnObject.transform.position = new Vector3( spawn_x + map_position.x, spawn_y + map_position.y, 0.2f);
 
                 //spawnObject.spriteRenderer.bounds.Intersects
 
