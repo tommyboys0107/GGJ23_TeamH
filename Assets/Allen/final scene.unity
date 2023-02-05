@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.6997336, g: 0.5594266, b: 0.38041604, a: 1}
+  m_IndirectSpecularColor: {r: 0.699936, g: 0.55918545, b: 0.38021097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1226,7 +1226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7890478508166086133, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc23014f39afe4759900e179f19d8577, type: 3}
@@ -2153,7 +2153,6 @@ MonoBehaviour:
   timelime: {fileID: 127163743}
   insectMapBuilder: {fileID: 1236091764}
   branch_player: {fileID: 1262554773}
-  start_game_cam_position: {x: -5.578, y: 0.325, z: 3.41}
   start_game_cam_size: 0.25
   end_game_cam_position: {x: -6.432, y: 0.388, z: 3.65}
   end_game_text: {fileID: 570005039}
