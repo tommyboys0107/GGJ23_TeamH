@@ -88,6 +88,7 @@ public class GM : MonoBehaviour
         }
     }
     public GameObject pp;
+    LineBullet bullet;
     protected void PlayerMove()
     {
         
@@ -121,8 +122,12 @@ public class GM : MonoBehaviour
             if (BottonDownL == true)
             {
                 GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + 90));
+
+
                 //Instantiate(pp);
-                g.GetComponent<LineBullet>().hp = hp * HPscale;
+                bullet = g.GetComponent<LineBullet>();
+                bullet.hp = hp * HPscale;
+                bullet.RotaSpeed = bullet.RotaSpeed * -1;
                 hp = hp - hp * HPscale;
 
                 AddLineEvent?.Invoke();
