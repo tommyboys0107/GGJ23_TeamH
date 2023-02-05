@@ -34,23 +34,38 @@ public class GM : MonoBehaviour
     public delegate void AddLine();
     public static event AddLine AddLineEvent;
 
+    Hsinpa.InsectMapBuilder insectMapBuilder;
+
+
     public float HPscale = 0.25f;
+    private bool deadFlag = false;
+
     // Start is called before the first frame update
     void Start()
     {
         MainGM = this;
-        Line = gameObject.GetComponent<LineRenderer>();  
+        Line = gameObject.GetComponent<LineRenderer>();
+        insectMapBuilder = GameObject.FindObjectOfType<Hsinpa.InsectMapBuilder>(includeInactive: true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (deadFlag) return;
+
         if (hp <= 0)
         {
             Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent, this);
-
+            deadFlag = true;
             return;
         }
+
+        if (insectMapBuilder != null && !insectMapBuilder.InsectBodyCollider.OverlapPoint(P.transform.position)) {
+            Hsinpa.Utility.SimpleEventSystem.Send(Hsinpa.GeneralStaticFlag.EventFlag.GameFailEvent, this);
+            deadFlag = true;
+            return;
+        }
+
         hp -= Time.deltaTime;
         if (isAlive)
         {

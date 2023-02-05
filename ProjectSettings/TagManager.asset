@@ -9,6 +9,7 @@ TagManager:
   - Nutrition
   - Barricade
   - Brain
+  - InsectBody
   layers:
   - Default
   - TransparentFX

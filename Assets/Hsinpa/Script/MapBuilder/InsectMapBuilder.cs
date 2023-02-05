@@ -22,6 +22,10 @@ namespace Hsinpa {
         private GameObject insectTextureHolder;
 
         [SerializeField]
+        private PolygonCollider2D insectBodyCollider;
+        public PolygonCollider2D InsectBodyCollider => insectBodyCollider;
+
+        [SerializeField]
         private Vector3 offset_position;
 
         [Header("Object Config")]

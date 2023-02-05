@@ -17,6 +17,7 @@ public class LineBullet : MonoBehaviour
 
     public GameObject LinePrefab;
     float rt;
+    private bool deadFlag;
 
     Hsinpa.InsectMapBuilder insectMapBuilder;
 
@@ -33,6 +34,11 @@ public class LineBullet : MonoBehaviour
 
     private void Update()
     {
+        if (deadFlag) {
+            Destroy(this);
+            return;
+        };
+
         hp -= Time.deltaTime;
         if(hp <= 0)
         {
@@ -51,17 +57,17 @@ public class LineBullet : MonoBehaviour
             //Debug.Log("X " + currentPosition.x);
 
             if (
-                currentPosition.x > insectMapBuilder.center.x + (insectMapBuilder.width * 0.5f) ||
-                currentPosition.x < insectMapBuilder.center.x - (insectMapBuilder.width * 0.5f) ||
+                //currentPosition.x > insectMapBuilder.center.x + (insectMapBuilder.width * 0.5f) ||
+                //currentPosition.x < insectMapBuilder.center.x - (insectMapBuilder.width * 0.5f) ||
 
-                currentPosition.y > insectMapBuilder.center.y + (insectMapBuilder.height * 0.5f) ||
-                currentPosition.y < insectMapBuilder.center.y - (insectMapBuilder.height * 0.5f)
+                //currentPosition.y > insectMapBuilder.center.y + (insectMapBuilder.height * 0.5f) ||
+                //currentPosition.y < insectMapBuilder.center.y - (insectMapBuilder.height * 0.5f)
+
+                !insectMapBuilder.InsectBodyCollider.OverlapPoint(currentPosition)
                 ) {
-
-                //Debug.Log("Destory");
+                deadFlag = true;
                 return;
-            }
-                
+            }                
         }
 
 
