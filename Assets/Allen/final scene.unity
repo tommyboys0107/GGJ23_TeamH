@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.699936, g: 0.55918545, b: 0.38021097, a: 1}
+  m_IndirectSpecularColor: {r: 0.6997336, g: 0.5594266, b: 0.38041604, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1148,26 +1148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3706919881937478323, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3485943
-      objectReference: {fileID: 0}
-    - target: {fileID: 3706919881937478323, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3684457
-      objectReference: {fileID: 0}
-    - target: {fileID: 3706919881937478323, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3706919881937478323, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3710911288656132913, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: m_TagString
-      value: Brain
-      objectReference: {fileID: 0}
     - target: {fileID: 7890478507912238744, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1212,21 +1192,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: energy_prefab
-      value: 
-      objectReference: {fileID: 3572641856278876326, guid: 81a57839424e1164a8487959c303841b, type: 3}
-    - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: barricade_prefab
-      value: 
-      objectReference: {fileID: 277563677, guid: e1ca863ec39deb54593518cb7b58296f, type: 3}
     - target: {fileID: 7890478507912238746, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_Name
       value: MapBuilder
-      objectReference: {fileID: 0}
-    - target: {fileID: 7890478508166086133, guid: dc23014f39afe4759900e179f19d8577, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc23014f39afe4759900e179f19d8577, type: 3}
@@ -1693,7 +1661,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Positions:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
