@@ -19,6 +19,8 @@ public class BeginTimelineCtrl : MonoBehaviour
     [SerializeField]
     private GameObject branch_player;
 
+    [SerializeField] float start_game_cam_size;
+
     [SerializeField]
     private Vector3 end_game_cam_position;
 
@@ -61,6 +63,13 @@ public class BeginTimelineCtrl : MonoBehaviour
         if (game_end_flag && Input.GetKeyDown(KeyCode.Space)) {
             var currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
             UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene.name, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            timelime.Stop();
+            _mainCamera.transform.rotation = Quaternion.Euler(0.0f, 181.0f, 0.0f);
+            _mainCamera.DOOrthoSize(start_game_cam_size, 1);
         }
     }
 

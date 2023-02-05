@@ -340,6 +340,10 @@ PlayableDirector:
     value: {fileID: 835195894}
   - key: {fileID: -7141406834181238780, guid: 1163abed6a8caeb4aaa48195943ce6d7, type: 2}
     value: {fileID: 1892284301}
+  - key: {fileID: 5118197917128372599, guid: 1163abed6a8caeb4aaa48195943ce6d7, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6803080988857736366, guid: 1163abed6a8caeb4aaa48195943ce6d7, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &127163744
@@ -2069,14 +2073,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: -0.000000029802319, y: -0.9999628, z: 0.00000014516989, w: 0.008630789}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -6.432, y: 0.388, z: 3.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.0005412645, y: 359.5864, z: 0.1517366}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1687258586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,6 +2149,8 @@ MonoBehaviour:
   timelime: {fileID: 127163743}
   insectMapBuilder: {fileID: 1236091764}
   branch_player: {fileID: 1262554773}
+  start_game_cam_position: {x: -5.578, y: 0.325, z: 3.41}
+  start_game_cam_size: 0.25
   end_game_cam_position: {x: -6.432, y: 0.388, z: 3.65}
   end_game_text: {fileID: 570005039}
   end_game_cam_size: 0.64
