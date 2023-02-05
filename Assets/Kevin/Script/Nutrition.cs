@@ -56,7 +56,7 @@ public class Nutrition : EnergyObject
     {
         while (totalNutritionValue > 0)
         {
-            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime *(1+enterMultiplier));
+            SimpleEventSystem.Send((int)SimpleEventSystem.Tag.AddNutrition, nutritionOverTime );
 
             //playerController.AddNutrition(nutritionOverTime);
 
@@ -80,6 +80,7 @@ public class Nutrition : EnergyObject
     {
         if (collision.GetComponent<Collider2D>().tag == "Player")
         {
+            Debug.Log("Enter");
 
             if (!isProviding)
             {
