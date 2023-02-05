@@ -78,7 +78,7 @@ public class BeginTimelineCtrl : MonoBehaviour
         // Skip timeline to start game
         if (Input.GetKeyDown(KeyCode.S)) 
         {
-            timelime.Stop();
+            timelime.time = timelime.duration;
             _mainCamera.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
             _mainCamera.DOOrthoSize(start_game_cam_size, 1);
         }
