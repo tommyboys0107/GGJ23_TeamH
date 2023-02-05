@@ -13,7 +13,7 @@ namespace Hsinpa
         [SerializeField]
         protected Sprite[] sprites;
 
-        private PolygonCollider2D polygonCollider;
+        private CircleCollider2D polygonCollider;
 
         public int original_energy;
         public int energy;
@@ -27,7 +27,9 @@ namespace Hsinpa
             {
                 spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
 
-                polygonCollider = this.gameObject.AddComponent<PolygonCollider2D>();
+                polygonCollider = this.gameObject.AddComponent<CircleCollider2D>();
+                polygonCollider.radius = polygonCollider.radius * 0.5f;
+                polygonCollider.isTrigger = true;
             }
 
             //Set rotation

@@ -109,8 +109,8 @@ MonoBehaviour:
   energy: 0
   size: {x: 0, y: 0}
   duration: 10
-  interval: 0.5
-  totalNutritionValue: 20
+  interval: 0.2
+  totalNutritionValue: 50
   nutritionOverTime: 1
   maxNutritionValue: 0
   thisCollider: {fileID: 0}

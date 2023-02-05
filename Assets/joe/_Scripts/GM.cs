@@ -180,11 +180,8 @@ public class GM : MonoBehaviour
     Color nowColor;
     protected void SetColor()
     {
-        Debug.Log("sc1");
         if (hp < maxPH * 0.7f)
         {
-
-            Debug.Log("sc");
 
             nowColor = Color.Lerp(StartColor, LineOverColor, 1 - hp / maxPH);
 

@@ -1450,7 +1450,7 @@ PrefabInstance:
       objectReference: {fileID: 277563677, guid: e1ca863ec39deb54593518cb7b58296f, type: 3}
     - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: barricade_max_size
-      value: 0.04
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: energy_spawn_trial
@@ -1458,7 +1458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7890478507912238745, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: barricade_spawn_trial
-      value: 32
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7890478507912238746, guid: dc23014f39afe4759900e179f19d8577, type: 3}
       propertyPath: m_Name
@@ -2074,6 +2074,8 @@ MonoBehaviour:
   BottonDownR: 0
   BottonDownL: 0
   HPscale: 0.25
+  pp: {fileID: 0}
+  LineOverColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1262554776
 Transform:
   m_ObjectHideFlags: 0

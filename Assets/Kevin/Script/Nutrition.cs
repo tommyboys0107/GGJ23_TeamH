@@ -19,7 +19,7 @@ public class Nutrition : EnergyObject
     protected Vector3 currentScale;
 
     [SerializeField]
-    protected PolygonCollider2D thisCollider;
+    protected CircleCollider2D thisCollider;
 
     protected bool isProviding;
 
@@ -44,7 +44,9 @@ public class Nutrition : EnergyObject
         {
             spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
 
-            thisCollider = this.gameObject.AddComponent<PolygonCollider2D>();
+            thisCollider = this.gameObject.AddComponent<CircleCollider2D>();
+            thisCollider.isTrigger = true;
+            thisCollider.radius = thisCollider.radius * 0.8f;
         }
 
         enterMultiplier = enterTimes * .55f;
