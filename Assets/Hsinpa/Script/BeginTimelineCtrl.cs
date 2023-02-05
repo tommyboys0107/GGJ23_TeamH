@@ -52,7 +52,6 @@ public class BeginTimelineCtrl : MonoBehaviour
 
             if (branch_player != null)
                 branch_player.gameObject.SetActive(true);
-            GetComponent<AudioSource>().Play();
         };
         
 
