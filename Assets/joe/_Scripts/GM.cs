@@ -117,7 +117,6 @@ public class GM : MonoBehaviour
             {
 // Updated upstream
              GameObject g = Instantiate(LinePrefab, P.transform.position, Quaternion.Euler(0, 0, P.eulerAngles.z + -90));
-                Instantiate(Split, P.transform.position, Quaternion.identity);
 //Stashed changes
                 g.GetComponent<LineBullet>().hp = hp * HPscale;
                 hp = hp - hp * HPscale;
@@ -138,7 +137,6 @@ public class GM : MonoBehaviour
                 bullet.RotaSpeed = bullet.RotaSpeed * -1;
 //
 // Updated upstream
-                Instantiate(Split, P.transform.position, Quaternion.identity);
 // Stashed changes
                 g.GetComponent<LineBullet>().hp = hp * HPscale;
 // Stashed changes
