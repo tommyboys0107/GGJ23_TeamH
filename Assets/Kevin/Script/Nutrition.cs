@@ -42,6 +42,7 @@ public class Nutrition : EnergyObject
         {
             spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
 
+            thisCollider = this.gameObject.AddComponent<PolygonCollider2D>();
         }
 
     }
